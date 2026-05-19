@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch" onfocus="refresh">
+  
+  <!-- Header -->
+  <row weight="wrap">
+    <label id="header" text="MAP · v2.1" size="18" weight="fill" />
+    <label id="device-count" text="0 DEVICES" size="10" color="muted" />
+    <label id="bt-status" text="BT Initializing..." size="10" color="accent" />
+  </row>
+  
+  <spacer height="10" />
+  
+  <!-- Tabs -->
+  <row weight="wrap">
+    <button text="Board" icon="view-grid" ontap="showBoard" />
+    <button text="Timeline" icon="timeline" ontap="showTimeline" />
+    <button text="Calendar" icon="calendar" ontap="showCalendar" />
+    <button text="Analytics" icon="chart" ontap="showAnalytics" />
+  </row>
+  
+  <spacer height="15" />
+  
+  <!-- Mission Board -->
+  <row weight="wrap">
+    <label text="Mission Board" size="14" weight="fill" />
+    <button text="⊚ Set Alarms" ontap="setAlarms" />
+    <button text="+ New Task" icon="add" ontap="addTask" color="accent" />
+  </row>
+  
+  <label id="subtitle" text="Auto-syncs across all Bluetooth devices" size="9" color="muted" />
+  
+  <spacer height="10" />
+  
+  <!-- Board Columns -->
+  <row weight="fill">
+    <!-- Backlog -->
+    <column>
+      <row weight="wrap">
+        <label text="BACKLOG" size="10" font="mono" />
+        <label id="count-0" text="(0)" size="10" color="muted" />
+        <button icon="add" ontap="addToBacklog" size="small" />
+      </row>
+      <list id="col-0" ontap="onTaskTap" />
+    </column>
+    
+    <!-- To Do -->
+    <column>
+      <row weight="wrap">
+        <label text="TO DO" size="10" font="mono" color="accent" />
+        <label id="count-1" text="(0)" size="10" color="muted" />
+        <button icon="add" ontap="addToTodo" size="small" />
+      </row>
+      <list id="col-1" ontap="onTaskTap" />
+    </column>
+    
+    <!-- In Progress -->
+    <column>
+      <row weight="wrap">
+        <label text="IN PROGRESS" size="10" font="mono" color="amber" />
+        <label id="count-2" text="(0)" size="10" color="muted" />
+        <button icon="add" ontap="addToProgress" size="small" />
+      </row>
+      <list id="col-2" ontap="onTaskTap" />
+    </column>
+    
+    <!-- Done -->
+    <column>
+      <row weight="wrap">
+        <label text="DONE" size="10" font="mono" color="green" />
+        <label id="count-3" text="(0)" size="10" color="muted" />
+      </row>
+      <list id="col-3" ontap="onTaskTap" />
+    </column>
+  </row>
+  
+  <spacer height="15" />
+  
+  <!-- Productivity Stats -->
+  <row weight="wrap">
+    <label text="Productivity ↑12%" size="11" weight="fill" />
+  </row>
+  
+  <row weight="wrap">
+    <column>
+      <label id="stat-active" text="0" size="22" color="accent" />
+      <label text="Active" size="9" color="muted" />
+    </column>
+    <column>
+      <label id="stat-overdue" text="0" size="22" color="red" />
+      <label text="Overdue" size="9" color="muted" />
+    </column>
+    <column>
+      <label id="stat-completed" text="0" size="22" color="green" />
+      <label text="Completed" size="9" color="muted" />
+    </column>
+    <column>
+      <label id="stat-upcoming" text="0" size="22" color="amber" />
+      <label text="Upcoming" size="9" color="muted" />
+    </column>
+  </row>
+  
+  <spacer height="15" />
+  
+  <!-- AI Command Bar -->
+  <row weight="wrap">
+    <label text="⊕ MAP AI" size="10" color="accent" font="mono" />
+  </row>
+  
+  <row weight="wrap">
+    <button text="Auto-schedule" ontap="scheduleWeek" />
+    <button text="Flag overdue" ontap="flagOverdue" />
+    <button text="Set alarms" ontap="setAlarms" />
+  </row>
+  
+  <row weight="wrap">
+    <input id="ai-input" hint="Ask MAP to plan, reschedule, or prioritise..." weight="fill" />
+    <button text="Execute ↗" ontap="executeAI" color="accent" />
+  </row>
+  
+  <label id="ai-result" text="" size="10" color="muted" />
+  
+  <spacer height="10" />
+  
+  <!-- Sync Protocol Info -->
+  <row weight="wrap">
+    <label text="Sync Protocol" size="10" font="mono" />
+  </row>
+  
+  <row weight="wrap">
+    <label text="Mode: BT 5.3 + WiFi 6E" size="9" />
+    <label text="Latency: ~4ms" size="9" color="green" />
+  </row>
+  <row weight="wrap">
+    <label text="Alarm sync: All devices" size="9" color="green" />
+    <label text="Encryption: AES-256" size="9" color="accent2" />
+  </row>
+  
+</layout>

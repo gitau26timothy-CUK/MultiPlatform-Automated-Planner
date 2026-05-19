@@ -1,0 +1,7 @@
+meta.name: MpAp AutoOrganizer
+meta.author: MpAp Team
+meta.description: Multiplatform Automated Planner - Task sync via Bluetooth
+meta.version: 2.1.0
+meta.platform: windows mac linux
+meta.bluetooth: true
+meta.port: 5544
